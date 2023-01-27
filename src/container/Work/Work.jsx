@@ -29,7 +29,7 @@ const Work = () => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
 
       if (item === 'All') {
-        setFilterWork(works);
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
       } else {
         setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
@@ -41,7 +41,7 @@ const Work = () => {
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
 
       <div className="app__work-filter">
-        {['All', 'UI/UX', 'AI', 'Mobile App', 'React JS', 'Others'].map((item, index) => (
+        {['All', 'UI/UX', 'AI', 'Web App', 'React JS', 'Others'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
